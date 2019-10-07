@@ -1,0 +1,11 @@
+<app-header></app-header>
+
+<ion-content class="ion-padding">
+  <p>Here are the various methods you can use to contact me:</p>
+  <ion-list>
+    <ion-item [href]="method.href" target="_blank" rel="noopener noreferrer" *ngFor="let method of contact">
+      <ion-icon slot="start" [name]="method.icon"></ion-icon>
+      <ion-label>{{method.text}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

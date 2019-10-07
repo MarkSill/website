@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IonicModule } from '@ionic/angular';
-import { RouterModule } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
-import { HomePage } from './home.page';
+import { IonicModule } from '@ionic/angular';
+
+import { AboutPage } from './about.page';
 import { SharedModule } from '../shared/shared.module';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: AboutPage,
+    data: { title: 'About' }
+  }
+];
 
 @NgModule({
   imports: [
@@ -13,14 +22,8 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     IonicModule,
     SharedModule,
-    RouterModule.forChild([
-      {
-        path: '',
-        component: HomePage,
-        data: { title: 'Home' }
-      }
-    ])
+    RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [AboutPage]
 })
-export class HomePageModule {}
+export class AboutPageModule {}
